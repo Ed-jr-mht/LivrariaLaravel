@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUpdateLivro;
 use Illuminate\Http\Request;
-use App\Models\Livro;
+use App\Models\{Livro,Editora,Midia,Autor};
 use Faker\Calculator\Isbn;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class LivroController extends Controller
 {
