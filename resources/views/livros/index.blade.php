@@ -1,14 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lista de livros</title>
-</head>
-<body>
-    <h1>Lista de Livros</h1>
+@extends('adminlte::page')
 
+@section('title','Listar Livros')
+
+@section('content_header')
+    <h1>Lista de Livros</h1>
+@stop
+
+@section('content')
+
+@if($errors->anY())
+        @foreach ($errors-> all() as $error)
+        <p>{{$error}}</p>
+        @endforeach
+    @endif
+
+
+    <h4>CADASTRAR NOVO LIVRO</h4>
     <p><a href="{{route('livros.create')}}">[Inserir novo livro]</a></p>
 
     <hr>
@@ -44,5 +51,14 @@
         {{$livros->links() }}
 
     @endif
-</body>
-</html>
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script>
+        console.log('SUP!');
+    </script>
+@stop

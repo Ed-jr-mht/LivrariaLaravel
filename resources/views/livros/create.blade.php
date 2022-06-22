@@ -1,14 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Adicionar um livro</title>
-</head>
-<body>
-    <h1>Adicionar um livro</h1>
+@extends('adminlte::page')
 
+@section('title','Criar Livro')
+
+@section('content_header')
+    <h1>Digite e Crie novos Livros</h1>
+@stop
+
+@section('content')
+
+@if($errors->anY())
+        @foreach ($errors-> all() as $error)
+        <p>{{$error}}</p>
+        @endforeach
+    @endif
+
+    <p>será armazenados nesses campos:</p>
+
+
+    <h4>CADASTRAR NOVO LIVRO</h4>
     <div>
         <form method="post" action="{{route('livros.store')}}" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -23,5 +32,14 @@
             <p><button type="submit">Enviar</button></p>
         </form>
     </div>
-</body>
-</html>
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script>
+        console.log('SUP!');
+    </script>
+@stop

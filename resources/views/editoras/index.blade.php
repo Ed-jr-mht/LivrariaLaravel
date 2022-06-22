@@ -1,15 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lista de Editoras</title>
-</head>
-<body>
+
+@extends('adminlte::page')
+
+@section('title','Listar Editoras')
+
+@section('content_header')
+    <h1>LISTA DE EDITORAS</h1>
+@stop
+
+@section('content')
+
+@if($errors->anY())
+        @foreach ($errors-> all() as $error)
+        <p>{{$error}}</p>
+        @endforeach
+    @endif
 
 
-    <p><a href="{{ route('editoras.create') }}">[Inserir nova editora]</a></p>
+        <h4>Lista de Editoras a baixo</h4>
+
+        <p><a href="{{ route('editoras.create') }}">[Inserir nova editora]</a></p>
 
     <hr>
 
@@ -31,5 +40,16 @@
         </p>
 
     @endforeach
-</body>
-</html>
+
+
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script>
+        console.log('SUP!');
+    </script>
+@stop

@@ -9,6 +9,30 @@
 <body>
     <h1>Detalhes do autor {{$autor->nome}}</h1>
 
+
+</body>
+</html>
+
+
+@extends('adminlte::page')
+
+@section('title','Deletar Autoras')
+
+@section('content_header')
+    <h1>Listar e Deletar Autoras</h1>
+@stop
+
+@section('content')
+
+@if($errors->anY())
+        @foreach ($errors-> all() as $error)
+        <p>{{$error}}</p>
+        @endforeach
+    @endif
+
+
+    <h4> Listar e Deletar Autores</h4>
+
     <div>
         <ul>
             <li>Area: {{$autor->area}}</li>
@@ -24,5 +48,14 @@
             <button type="submit">Deletar o autor "{{$autor->nome}}"</button>
         </form>
     </div>
-</body>
-</html>
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script>
+        console.log('SUP!');
+    </script>
+@stop

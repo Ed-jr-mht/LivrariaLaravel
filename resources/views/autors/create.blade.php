@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Adicionar autor</title>
-</head>
-<body>
+@extends('adminlte::page')
+
+@section('title','Criar Autores')
+
+@section('content_header')
+    <h1>CRIE NOVOS AUTORES</h1>
+@stop
+
+@section('content')
+
+@if($errors->anY())
+        @foreach ($errors-> all() as $error)
+        <p>{{$error}}</p>
+        @endforeach
+    @endif
+
     <h1>Adicionar autor</h1>
 
     <div>
@@ -22,5 +29,16 @@
             <p><button type="submit">Enviar</button></p>
         </form>
     </div>
-</body>
-</html>
+
+
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script>
+        console.log('SUP!');
+    </script>
+@stop
